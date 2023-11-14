@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string? Libelle { get; set; }
-        public List<Machine> Machines { get; set; }
+        public virtual List<Machine> Machines { get; set; }
         public int Nombre_De_Places { get; set; }
         /*public virtual Formation Formation { get; set; }*/
     }

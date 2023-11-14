@@ -24,3 +24,14 @@ D:\Code\2- C#\Cegefos\Cegefos\obj\Debug\net6.0\refint\Cegefos.API.dll
 D:\Code\2- C#\Cegefos\Cegefos\obj\Debug\net6.0\Cegefos.API.pdb
 D:\Code\2- C#\Cegefos\Cegefos\obj\Debug\net6.0\Cegefos.API.genruntimeconfig.cache
 D:\Code\2- C#\Cegefos\Cegefos\obj\Debug\net6.0\ref\Cegefos.API.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Code\2- C#\Cegefos\Cegefos\obj\Debug\net6.0\Cegefos.API.csproj.CopyComplete
