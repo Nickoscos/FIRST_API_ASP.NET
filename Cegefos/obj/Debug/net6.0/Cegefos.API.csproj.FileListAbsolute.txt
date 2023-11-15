@@ -35,3 +35,4 @@ D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abst
 D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 D:\Code\2- C#\Cegefos\Cegefos\obj\Debug\net6.0\Cegefos.API.csproj.CopyComplete
+D:\Code\2- C#\Cegefos\Cegefos\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll

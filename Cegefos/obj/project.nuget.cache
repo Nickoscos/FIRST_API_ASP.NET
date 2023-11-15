@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "W1+ixQqw2cimLhGQF06pOYQ1udMy8Uv55EednM/wegR/quJCM7+6wK84GBmdSyS1qByRtabve7HSUKyCv7JCDg==",
+  "dgSpecHash": "IXpq/Z/8Qmn8yA6qlBd6ibKI8uOWZqHzjArUnaofm69griuRERuyEcTD/tTquGWceT2//+Ve82rZc/OxJjRSKQ==",
   "success": true,
   "projectFilePath": "D:\\Code\\2- C#\\Cegefos\\Cegefos\\Cegefos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicol\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.0\\microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.0\\microsoft.entityframeworkcore.analyzers.7.0.0.nupkg.sha512",
+    "C:\\Users\\nicol\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.0\\microsoft.entityframeworkcore.inmemory.7.0.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",

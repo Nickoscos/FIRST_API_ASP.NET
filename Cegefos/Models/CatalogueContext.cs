@@ -9,13 +9,15 @@ namespace Cegefos.API.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Salle>().HasMany(s => s.Machines).WithOne(a => a.Salle).HasForeignKey(a => a.SalleId);
-
+            modelBuilder.Entity<Salle>().HasMany(s => s.Formations).WithOne(a => a.Salle).HasForeignKey(a => a.SalleId);
+            modelBuilder.Entity<Formation>().HasOne(f => f.Salle);
             modelBuilder.Seed();
         }
 
-        public DbSet<Machine> Machines { get; set; }
+        public DbSet<Formation> Formations { get; set; }
         public DbSet<Salle> Salles { get; set; }
+        /*        public DbSet<Machine> Machines { get; set; }
+                */
 
     }
 }
