@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\2- C#\\Cegefos\\Cegefos\\Cegefos.API.csproj": {}
+    "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj": {}
   },
   "projects": {
-    "D:\\Code\\2- C#\\Cegefos\\Cegefos\\Cegefos.API.csproj": {
+    "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\2- C#\\Cegefos\\Cegefos\\Cegefos.API.csproj",
+        "projectUniqueName": "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj",
         "projectName": "Cegefos.API",
-        "projectPath": "D:\\Code\\2- C#\\Cegefos\\Cegefos\\Cegefos.API.csproj",
+        "projectPath": "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj",
         "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\2- C#\\Cegefos\\Cegefos\\obj\\",
+        "outputPath": "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,11 +41,19 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "ContosoUniversity": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
               "version": "[7.0.0, )"
             }
