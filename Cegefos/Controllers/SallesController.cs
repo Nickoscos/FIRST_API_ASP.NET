@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Cegefos.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cegefos.API.Controllers
 {
@@ -26,6 +27,7 @@ namespace Cegefos.API.Controllers
             return _context.Salles.ToArray();
         }
 
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSalleById(int id)
         {
@@ -36,5 +38,21 @@ namespace Cegefos.API.Controllers
             }
             return Ok(salle);
         }
+
+        [HttpGet("{id}/machines")]
+        public IActionResult GetMachinesBySalleId(int id)
+        {
+            var salle = _context.Salles.Include(s => s.Machines).Where(m => m.Id==id).FirstOrDefault();
+
+            if (salle == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(salle.Machines);
+        }
     }
+
+
 }
+

@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cegefos.API.Models
 {
@@ -8,10 +10,10 @@ namespace Cegefos.API.Models
         public string Libelle { get; set; }
         
         public int Nombre_De_Places { get; set; }
-
+        public List<Machine> Machines { get; set; }
         [JsonIgnore]
         public virtual List<Formation> Formations { get; set; }
-        [JsonIgnore]
-        public virtual List<Machine> Machines { get; set; }
+
+        
     }
 }

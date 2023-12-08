@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cegefos.API.Models
 {
@@ -10,9 +11,11 @@ namespace Cegefos.API.Models
         public string Memoire { get; set; }
         public string Capacite { get; set; }
         public double Taille_ecran { get; set; }
+
+
         public int SalleId { get; set; }
         [JsonIgnore]
-        public virtual Salle Salle { get; set; }
+        public Salle Salle { get; set; }
 
     }
 }

@@ -7,6 +7,7 @@ namespace Cegefos.API.Models
     {
         public int Id { get; set; }
         public string Libelle { get; set; }
+
         public int SalleId { get; set; }
         public Salle Salle { get; set; }
     }
