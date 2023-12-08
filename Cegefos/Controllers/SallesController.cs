@@ -22,9 +22,16 @@ namespace Cegefos.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Salle> GetSalles()
+ /*       public IEnumerable<Salle> GetSalles()
         {
             return _context.Salles.ToArray();
+        }*/
+
+        public async Task<List<Salle>> GetSalles()
+        {
+            var salle = await _context.Salles.Include(t => t.Machines).ToListAsync();
+
+            return salle;
         }
 
 
