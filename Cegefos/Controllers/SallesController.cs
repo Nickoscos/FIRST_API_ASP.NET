@@ -38,7 +38,7 @@ namespace Cegefos.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSalleById(int id)
         {
-            var salle = await _context.Salles.FindAsync(id);
+            var salle = await _context.Salles.Include(s => s.Machines).Where(m => m.Id == id).ToListAsync();
             if (salle == null)
             {
                 return NotFound();
