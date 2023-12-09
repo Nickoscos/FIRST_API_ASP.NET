@@ -12,8 +12,10 @@ namespace Cegefos.API.Models
         public int Nombre_De_Places { get; set; }
         public List<Machine> Machines { get; set; }
         [JsonIgnore]
+        public Cours Cours { get; set; }
+        [JsonIgnore]
         public virtual List<Formation> Formations { get; set; }
-
         
+
     }
 }

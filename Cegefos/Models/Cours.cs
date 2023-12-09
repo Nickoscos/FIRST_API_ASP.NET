@@ -1,5 +1,5 @@
-﻿using ContosoUniversity.Models;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cegefos.API.Models
 {
@@ -10,13 +10,19 @@ namespace Cegefos.API.Models
         public string Titre { get; set; }
         public int Duree { get; set; }
         public string Programme { get; set; }
-        public int FormationId { get; set; }
         
-        [JsonIgnore]
+        public Salle Salle { get; set; }
+
         public Formation Formation { get; set; }
 
-        public int SalleId { get; set; }
         [JsonIgnore]
-        public Salle Salle { get; set; }
+        public int SalleId { get; set; }
+
+        [JsonIgnore]
+        public int FormationId { get; set; }
+
+
+
+
     }
 }

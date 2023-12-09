@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Cegefos.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cegefos.API.Controllers
 {
@@ -21,9 +22,11 @@ namespace Cegefos.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Cours> GetCourss()
+        public async Task<List<Cours>> GetCourss()
         {
-            return _context.Courss.ToArray();
+            var cours = await _context.Courss.Include(t => t.Salle.Machines).ToListAsync();
+
+            return cours;
         }
 
         [HttpGet("{id}")]
