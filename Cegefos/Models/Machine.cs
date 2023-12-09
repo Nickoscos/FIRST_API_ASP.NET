@@ -12,7 +12,7 @@ namespace Cegefos.API.Models
         public string Capacite { get; set; }
         public double Taille_ecran { get; set; }
 
-
+        [JsonIgnore]
         public int SalleId { get; set; }
         [JsonIgnore]
         public Salle Salle { get; set; }
