@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Cegefos.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cegefos.API.Controllers
 {
@@ -21,9 +22,15 @@ namespace Cegefos.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Formation> GetFormations()
+/*        public IEnumerable<Formation> GetFormations()
         {
             return _context.Formations.ToArray();
+        }*/
+        public async Task<List<Formation>> GetFormations()
+        {
+            var formation = await _context.Formations.Include(t => t.Salle.Machines).ToListAsync();
+
+            return formation;
         }
 
         [HttpGet("{id}")]
