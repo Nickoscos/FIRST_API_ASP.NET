@@ -28,7 +28,7 @@ namespace Cegefos.API.Controllers
         }*/
         public async Task<List<Formation>> GetFormations()
         {
-            var formation = await _context.Formations.Include(t => t.Salle.Machines).ToListAsync();
+            var formation = await _context.Formations.Include(t => t.Salle.Machines).Include(t => t.Cours).ToListAsync();
 
             return formation;
         }
@@ -36,7 +36,7 @@ namespace Cegefos.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetFormationById(int id)
         {
-            var Formation = await _context.Formations.FindAsync(id);
+            var Formation = await _context.Formations.Include(t => t.Salle.Machines).Include(t => t.Cours).Where(m => m.Id == id).ToListAsync();
             if (Formation == null)
             {
                 return NotFound();

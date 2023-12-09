@@ -10,16 +10,16 @@ namespace Cegefos.API.Models
         public string Titre { get; set; }
         public int Duree { get; set; }
         public string Programme { get; set; }
-        [JsonIgnore]
+        /*[JsonIgnore]
         public Salle Salle { get; set; }
-        [JsonIgnore]
+                 [JsonIgnore]
         public Formation Formation { get; set; }
 
         [JsonIgnore]
-        public int SalleId { get; set; }
+        public int SalleId { get; set; }*/
 
-        [JsonIgnore]
-        public int FormationId { get; set; }
+/*        [JsonIgnore]
+        public Formation Formation { get; set; }*/
 
 
 

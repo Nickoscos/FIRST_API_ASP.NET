@@ -24,7 +24,7 @@ namespace Cegefos.API.Controllers
         [HttpGet]
         public async Task<List<Cours>> GetCourss()
         {
-            var cours = await _context.Courss.Include(t => t.Salle.Machines).ToListAsync();
+            var cours = await _context.Courss.ToListAsync();
 
             return cours;
         }
