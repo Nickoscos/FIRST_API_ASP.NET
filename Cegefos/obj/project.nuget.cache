@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ASl33CMrTczm69NfXzW7kRuSB+OAxRDHTZiuztJInFEWCWRVBpLcWvxgbG93g1C/KU5kSvS86eBM7pktAMgjjg==",
+  "dgSpecHash": "3nDaK9jOc90sMyb9r6+41voOCTKMzXTApYLux6lx1LgoR6cpsv27p0rT+gEC+rgGXW6ayi7AiJYdqKYInJ7BLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj",
+  "projectFilePath": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicol\\.nuget\\packages\\antlr\\3.4.1.9004\\antlr.3.4.1.9004.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\castle.core\\3.3.0\\castle.core.3.3.0.nupkg.sha512",
