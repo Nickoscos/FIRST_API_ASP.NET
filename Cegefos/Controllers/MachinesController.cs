@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Cegefos.API.Models;
+using Cegefos.API.Classes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Web.Optimization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cegefos.API.Controllers
 {
@@ -21,10 +24,33 @@ namespace Cegefos.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Machine> GetMachines()
+        public async Task<IActionResult> GetMachines([FromQuery] FormSalMaQueryParameters queryParameters)
         {
-            return _context.Machines.ToArray();
+            IQueryable<Machine> machines = _context.Machines;
+
+            if (!string.IsNullOrEmpty(queryParameters.Libelle))
+            {
+                machines = machines.Where(
+                    p => p.Libelle.ToLower().Contains(queryParameters.Libelle.ToLower()));
+            }
+
+            if (!string.IsNullOrEmpty(queryParameters.SortBy))
+            {
+                if (typeof(Salle).GetProperty(queryParameters.SortBy) != null)
+                {
+                    machines = machines.OrderByCustom(queryParameters.SortBy, queryParameters.SortOrder);
+                }
+            }
+            machines = machines
+                .Skip(queryParameters.Size * (queryParameters.Page - 1))
+                .Take(queryParameters.Size);
+
+            return Ok(await machines.ToArrayAsync());
         }
+        /*        public IEnumerable<Machine> GetMachines()
+                {
+                    return _context.Machines.ToArray();
+                }*/
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMachineById(int id)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Cegefos.API.Models;
+using Cegefos.API.Classes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,16 +23,29 @@ namespace Cegefos.API.Controllers
         }
 
         [HttpGet]
- /*       public IEnumerable<Salle> GetSalles()
+        public async Task<IActionResult> GetSalles([FromQuery] FormSalMaQueryParameters queryParameters)
         {
-            return _context.Salles.ToArray();
-        }*/
+            IQueryable<Salle> salles = _context.Salles.Include(t => t.Machines);
 
-        public async Task<List<Salle>> GetSalles()
-        {
-            var salle = await _context.Salles.Include(t => t.Machines).ToListAsync();
+            if (!string.IsNullOrEmpty(queryParameters.Libelle))
+            {
+                salles = salles.Where(
+                    p => p.Libelle.ToLower().Contains(queryParameters.Libelle.ToLower()));
+            }
 
-            return salle;
+            if (!string.IsNullOrEmpty(queryParameters.SortBy))
+            {
+                if (typeof(Salle).GetProperty(queryParameters.SortBy) != null)
+                {
+                    salles = salles.OrderByCustom(queryParameters.SortBy, queryParameters.SortOrder);
+                }
+            }
+
+            salles = salles
+                .Skip(queryParameters.Size * (queryParameters.Page - 1))
+                .Take(queryParameters.Size);
+
+            return Ok(await salles.ToArrayAsync());
         }
 
 
