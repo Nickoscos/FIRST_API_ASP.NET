@@ -35,7 +35,7 @@ namespace Cegefos.API.Controllers
 
             if (!string.IsNullOrEmpty(queryParameters.SortBy))
             {
-                if (typeof(Salle).GetProperty(queryParameters.SortBy) != null)
+                if (typeof(Cours).GetProperty(queryParameters.SortBy) != null)
                 {
                     cours = cours.OrderByCustom(queryParameters.SortBy, queryParameters.SortOrder);
                 }
@@ -47,12 +47,6 @@ namespace Cegefos.API.Controllers
 
             return Ok(await cours.ToArrayAsync());
         }
-        /*        public async Task<List<Cours>> GetCourss()
-                {
-                    var cours = await _context.Courss.ToListAsync();
-
-                    return cours;
-                }*/
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCoursById(int id)

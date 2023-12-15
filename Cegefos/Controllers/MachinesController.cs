@@ -36,7 +36,7 @@ namespace Cegefos.API.Controllers
 
             if (!string.IsNullOrEmpty(queryParameters.SortBy))
             {
-                if (typeof(Salle).GetProperty(queryParameters.SortBy) != null)
+                if (typeof(Machine).GetProperty(queryParameters.SortBy) != null)
                 {
                     machines = machines.OrderByCustom(queryParameters.SortBy, queryParameters.SortOrder);
                 }
@@ -47,10 +47,7 @@ namespace Cegefos.API.Controllers
 
             return Ok(await machines.ToArrayAsync());
         }
-        /*        public IEnumerable<Machine> GetMachines()
-                {
-                    return _context.Machines.ToArray();
-                }*/
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMachineById(int id)

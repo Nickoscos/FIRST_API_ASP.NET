@@ -26,7 +26,7 @@ namespace Cegefos.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetFormations([FromQuery] FormSalMaQueryParameters queryParameters)
         {
-            IQueryable<Formation> formations = _context.Formations.Include(t => t.Salle.Machines).Include(t => t.Cours);
+            IQueryable<Formation> formations = _context.Formations;
 
             if (!string.IsNullOrEmpty(queryParameters.Libelle))
             {
@@ -36,14 +36,16 @@ namespace Cegefos.API.Controllers
 
             if (!string.IsNullOrEmpty(queryParameters.SortBy))
             {
-                if (typeof(Salle).GetProperty(queryParameters.SortBy) != null)
+                if (typeof(Formation).GetProperty(queryParameters.SortBy) != null)
                 {
                     formations = formations.OrderByCustom(queryParameters.SortBy, queryParameters.SortOrder);
                 }
             }
             formations = formations
                 .Skip(queryParameters.Size * (queryParameters.Page - 1))
-                .Take(queryParameters.Size);
+                .Take(queryParameters.Size)
+                .Include(t => t.Salle.Machines)
+                .Include(t => t.Cours);
 
             return Ok(await formations.ToArrayAsync());
         }
@@ -57,12 +59,17 @@ namespace Cegefos.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetFormationById(int id)
         {
-            var Formation = await _context.Formations.Include(t => t.Salle.Machines).Include(t => t.Cours).Where(m => m.Id == id).ToListAsync();
-            if (Formation == null)
+            IQueryable<Formation> formations = _context.Formations;
+
+            var formation = formations.Where(f => f.Id == id)
+                .Include(f => f.Salle)
+                .Include(f => f.Cours);
+
+            if (formation == null)
             {
                 return NotFound();
             }
-            return Ok(Formation);
+            return Ok(await formation.FirstAsync());
         }
     }
 }

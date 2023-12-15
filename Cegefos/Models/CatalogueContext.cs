@@ -12,11 +12,8 @@ namespace Cegefos.API.Models
         {
             modelBuilder.Entity<Formation>().HasOne(f => f.Salle);
             modelBuilder.Entity<Formation>().HasOne(f => f.Cours);
-            modelBuilder.Entity<Machine>().HasOne(s => s.Salle).WithMany(s => s.Machines).HasForeignKey(m => m.SalleId);
-            modelBuilder.Entity<Salle>().HasMany(s => s.Machines).WithOne(mi => mi.Salle).HasForeignKey(si => si.SalleId);
-            /*modelBuilder.Entity<Salle>().HasOne(s => s.Cours).WithOne(mi => mi.Salle).HasForeignKey(si => si.SalleId)*/;
-/*            modelBuilder.Entity<Cours>().HasOne(c => c.Formation);
-            modelBuilder.Entity<Cours>().HasOne(c => c.Salle);*/
+            modelBuilder.Entity<Machine>().HasOne(s => s.Salle);
+            modelBuilder.Entity<Salle>().HasMany(s => s.Machines);
             modelBuilder.Seed();
         }
 

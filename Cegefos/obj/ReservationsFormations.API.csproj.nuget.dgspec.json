@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.csproj": {}
+    "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\ReservationsFormations.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.csproj": {
+    "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\ReservationsFormations.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.csproj",
-        "projectName": "Cegefos",
-        "projectPath": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.csproj",
+        "projectUniqueName": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\ReservationsFormations.API.csproj",
+        "projectName": "ReservationsFormations.API",
+        "projectPath": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\ReservationsFormations.API.csproj",
         "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\obj\\",
         "projectStyle": "PackageReference",
