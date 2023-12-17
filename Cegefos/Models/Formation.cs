@@ -1,4 +1,4 @@
-﻿using ContosoUniversity.Models;
+using ContosoUniversity.Models;
 using System.Text.Json.Serialization;
 
 namespace Cegefos.API.Models
@@ -7,11 +7,11 @@ namespace Cegefos.API.Models
     {
         public int Id { get; set; }
         public string Libelle { get; set; }
-        public Salle Salle { get; set; }
-        public Cours Cours { get; set; }
-        [JsonIgnore]
+
+
         public int SalleId { get; set; }
-        [JsonIgnore]
         public int CoursId { get; set; }
+        public virtual Salle? Salle { get; set; }
+        public virtual Cours? Cours { get; set; }
     }
 }

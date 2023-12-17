@@ -59,5 +59,18 @@ namespace Cegefos.API.Controllers
             }
             return Ok(Machine);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Machine>> PostMachine([FromBody] Machine machine)
+        {
+            _context.Machines.Add(machine);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(
+                "GetMachine",
+                new { id = machine.Id },
+                machine
+                );
+        }
     }
 }

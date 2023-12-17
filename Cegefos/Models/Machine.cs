@@ -15,7 +15,7 @@ namespace Cegefos.API.Models
         [JsonIgnore]
         public int SalleId { get; set; }
         [JsonIgnore]
-        public Salle Salle { get; set; }
+        public Salle? Salle { get; set; }
 
     }
 }

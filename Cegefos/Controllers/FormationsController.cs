@@ -49,12 +49,6 @@ namespace Cegefos.API.Controllers
 
             return Ok(await formations.ToArrayAsync());
         }
-        /*        public async Task<List<Formation>> GetFormations()
-                {
-                    var formation = await _context.Formations.Include(t => t.Salle.Machines).Include(t => t.Cours).ToListAsync();
-
-                    return formation;
-                }*/
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetFormationById(int id)
@@ -70,6 +64,19 @@ namespace Cegefos.API.Controllers
                 return NotFound();
             }
             return Ok(await formation.FirstAsync());
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Formation>> PostFormation([FromBody] Formation formation)
+        {
+            _context.Formations.Add(formation);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(
+                "GetFormation",
+                new { id = formation.Id },
+                formation
+                );
         }
     }
 }

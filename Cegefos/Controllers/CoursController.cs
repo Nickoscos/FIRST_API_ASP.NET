@@ -58,5 +58,18 @@ namespace Cegefos.API.Controllers
             }
             return Ok(Cours);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Cours>> PostCours([FromBody] Cours cours)
+        {
+            _context.Courss.Add(cours);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(
+                "GetCours",
+                new { id = cours.Id },
+                cours
+                );
+        }
     }
 }
