@@ -85,6 +85,48 @@ namespace Cegefos.API.Controllers
                 salle
                 );
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutSalle([FromRoute] int id, [FromBody] Salle salle)
+        {
+            if (id != salle.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(salle).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (_context.Salles.Find(id) == null)
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Salle>> DeleteSalle(int id)
+        {
+            var salle = await _context.Salles.FindAsync(id);
+            if (salle == null)
+            {
+                return NotFound();
+            }
+
+            _context.Salles.Remove(salle);
+            await _context.SaveChangesAsync();
+
+            return salle;
+        }
     }
 
 

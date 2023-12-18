@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Cegefos",
+    "\\Cegefos\\Classes",
     "\\Cegefos\\Controllers",
     "\\Cegefos\\Models"
   ],
-  "SelectedNode": "\\Cegefos\\Models\\Formation.cs",
+  "SelectedNode": "\\Cegefos\\Controllers\\MachinesController.cs",
   "PreviewInSolutionExplorer": false
 }

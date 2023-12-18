@@ -71,5 +71,47 @@ namespace Cegefos.API.Controllers
                 cours
                 );
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCours([FromRoute] int id, [FromBody] Cours cours)
+        {
+            if (id != cours.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(cours).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (_context.Courss.Find(id) == null)
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Cours>> DeleteCours(int id)
+        {
+            var cours = await _context.Courss.FindAsync(id);
+            if (cours == null)
+            {
+                return NotFound();
+            }
+
+            _context.Courss.Remove(cours);
+            await _context.SaveChangesAsync();
+
+            return cours;
+        }
     }
 }

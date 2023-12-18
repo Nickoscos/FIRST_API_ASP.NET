@@ -72,5 +72,47 @@ namespace Cegefos.API.Controllers
                 machine
                 );
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutMachine([FromRoute] int id, [FromBody] Machine machine)
+        {
+            if (id != machine.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(machine).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (_context.Machines.Find(id) == null)
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Machine>> DeleteMachine(int id)
+        {
+            var machine = await _context.Machines.FindAsync(id);
+            if (machine == null)
+            {
+                return NotFound();
+            }
+
+            _context.Machines.Remove(machine);
+            await _context.SaveChangesAsync();
+
+            return machine;
+        }
     }
 }

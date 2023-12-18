@@ -78,5 +78,47 @@ namespace Cegefos.API.Controllers
                 formation
                 );
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutFormation([FromRoute] int id, [FromBody] Formation formation)
+        {
+            if (id != formation.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(formation).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (_context.Formations.Find(id) == null)
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Formation>> DeleteFormation(int id)
+        {
+            var formation = await _context.Formations.FindAsync(id);
+            if (formation == null)
+            {
+                return NotFound();
+            }
+
+            _context.Formations.Remove(formation);
+            await _context.SaveChangesAsync();
+
+            return formation;
+        }
     }
 }
