@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj": {}
+    "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj": {
+    "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj",
+        "projectUniqueName": "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj",
         "projectName": "Cegefos.API",
-        "projectPath": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj",
+        "projectPath": "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\Cegefos.API.csproj",
         "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicol\\source\\repos\\Nickoscos\\Cegefos\\Cegefos\\obj\\",
+        "outputPath": "C:\\Users\\nicol\\Source\\Repos\\Nickoscos\\Cegefos\\Cegefos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",

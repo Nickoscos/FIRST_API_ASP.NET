@@ -67,7 +67,7 @@ namespace Cegefos.API.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(
-                "GetMachine",
+                "GetMachines",
                 new { id = machine.Id },
                 machine
                 );

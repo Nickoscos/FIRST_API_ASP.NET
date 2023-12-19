@@ -80,7 +80,7 @@ namespace Cegefos.API.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(
-                "GetSalle",
+                "GetSalles",
                 new { id = salle.Id },
                 salle
                 );

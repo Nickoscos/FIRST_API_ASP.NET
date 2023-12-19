@@ -73,7 +73,7 @@ namespace Cegefos.API.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(
-                "GetFormation",
+                "GetFormations",
                 new { id = formation.Id },
                 formation
                 );
