@@ -10,5 +10,7 @@ namespace Cegefos.API.Classes
     {
         public string? Titre { get; set; }
 
+        public string? Code { get; set; }
+
     }
 }

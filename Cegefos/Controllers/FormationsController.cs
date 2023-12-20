@@ -11,7 +11,8 @@ using System.Web.Optimization;
 
 namespace Cegefos.API.Controllers
 {
-    [Route("[controller]")]
+    [ApiVersion("1.0")]
+    [Route("formations")]
     [ApiController]
     public class FormationsController : ControllerBase
     {

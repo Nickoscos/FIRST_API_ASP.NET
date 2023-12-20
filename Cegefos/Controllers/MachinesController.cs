@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cegefos.API.Controllers
 {
-    [Route("[controller]")]
+    [ApiVersion("1.0")]
+    [Route("machines")]
     [ApiController]
     public class MachinesController : ControllerBase
     {

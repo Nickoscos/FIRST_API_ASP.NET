@@ -10,7 +10,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cegefos.API.Controllers
 {
-    [Route("[controller]")]
+    [ApiVersion("1.0")]
+    [Route("salles")]
     [ApiController]
     public class SallesController : ControllerBase
     {
